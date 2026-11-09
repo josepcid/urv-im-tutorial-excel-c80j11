@@ -1,0 +1,6 @@
+# Material docent per als alumnes de la UOE. No volem que surti als cercadors.
+User-agent: *
+Disallow: /Base-de-dades-Mostreig-exemple-resolt.xlsx
+Disallow: /tutorial-per-a-la-ia.txt
+Disallow: /qr.png
+Allow: /
