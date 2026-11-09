@@ -142,6 +142,29 @@ a{color:var(--accent)}
 #iaok{font-size:14px;font-weight:600;color:#145A32}
 </style>
 
+
+<style>
+.qrbox{display:flex;flex-wrap:wrap;align-items:center;gap:18px 22px;background:var(--sticky-w);border:1px solid var(--line);
+  border-radius:16px;padding:16px 20px;margin:0 0 22px;box-shadow:var(--shadow);color:var(--sticky-ink)}
+.qrbox img{width:132px;height:132px;flex:none;image-rendering:pixelated;border-radius:8px}
+.qrbox .t{flex:1 1 300px;min-width:260px}
+.qrbox h2{font-family:var(--display);font-size:19px;margin:0 0 4px}
+.qrbox p{font-size:14.5px;line-height:1.5;margin:0 0 9px;color:var(--muted)}
+.qrbox code{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:#F1F4F9;border:1px solid var(--line);
+  border-radius:7px;padding:4px 8px;display:inline-block;word-break:break-all;color:var(--sticky-ink)}
+.qrbox a.big{display:inline-block;margin-top:10px;font:600 14px/1 var(--body);color:var(--accent);text-decoration:none}
+.qrbox a.big:hover{text-decoration:underline}
+@media(max-width:560px){.qrbox img{width:104px;height:104px}}
+</style>
+<div class="qrbox">
+  <img src="qr.png" alt="Codi QR d'aquesta pàgina">
+  <div class="t">
+    <h2>Aquesta pàgina, al mòbil</h2>
+    <p>Escaneja el QR amb la càmera, o escriu l'adreça. És la mateixa pàgina, amb l'exemple resolt i els exemples de preguntes.</p>
+    <code>josepcid.github.io/urv-im-tutorial-excel-c80j11</code>
+    <a class="big" href="qr.html" target="_blank" rel="noopener">Veure el QR gran, per projectar →</a>
+  </div>
+</div>
 <div class="iabox">
   <h2>Vols fer-ho amb la teva IA?</h2>
   <p>Aquest tutorial està pensat per llegir-lo aquí, amb les captures. Però si vols que ChatGPT, Claude o Gemini t'acompanyin mentre el fas, copia'l sencer amb el botó i enganxa'l al xat.</p>
