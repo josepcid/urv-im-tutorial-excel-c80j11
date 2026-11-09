@@ -189,3 +189,56 @@ La frase que has de poder dir
 Dubtes
 Fòrum de dubtes del Moodle o josep.cid@urv.cat. Despatx 238.
 Captures de pantalla preses de la sessió de treball amb la coordinació de l'assignatura del 8 de novembre de 2026, sobre el fitxer oficial de la Tasca 8.Els resultats de la calculadora d'error s'han comprovat a mdk.es el 9 de novembre de 2026.
+
+================================================================
+Bonus · Exemples de preguntes
+per repassar
+Aquestes són preguntes del tipus que surt a l'examen sobre la mostra. Prova de contestar-les abans d'obrir la resposta. No són l'examen: són exemples per veure com es pregunta i comprovar si ho tens.
+PREGUNTA 1 — Anem a fer un estudi de mercat per a una nova botiga d'esports a Reus (100.000 habitants). Inicialment es plantegen 400 enquestes per a tota la ciutat. Quan hauríem de proposar un augment de la mostra?
+- Quan necessitem recollir molta informació de cada individu.
+- Quan el client ens demana que es puguin donar resultats per a cadascun dels districtes.
+- Si en analitzar la informació trobem que hi ha molt poques persones de les que han contestat que facin esport, i per tant no podem aprofundir en aquest col·lectiu.
+- En qualsevol cas, perquè 400 enquestes són molt poques per als més de 100.000 habitants de Reus.
+RESPOSTA:
+La b. La mida de la mostra la mana el nivell de detall que vols donar. Si has de respondre per districte, cada districte necessita la seva pròpia mostra: 400 repartits entre, diguem, sis districtes són ~67 per districte, i amb 67 no pots dir res. És exactament el que has vist a la Tasca 8 amb els segments petits.
+La d és la temptació fàcil i és falsa: ja has vist que 400 serveixen igual per a 11.130 que per a 145.000.
+PREGUNTA 2 — En aquest mateix estudi (400 enquestes a Reus). Si obtenim que el 15 % de la població és seguidora del Reus Deportiu, quin seria l'error mostral que assumiríem?
+- ± 3,6 %
+- ± 1,78 %
+- ± 5,0 %
+- Cap de les anteriors
+RESPOSTA:
+La a: ± 3,6 %. És la calculadora d'error de la Tasca 7 amb mostra 600 canviada per 400, univers 100.000 i % obtingut 15.
+A mà: 2 × √(0,15 × 0,85 / 400) = 2 × √0,00031875 = 2 × 0,01785 = 0,0357 → 3,6 %. Fixa-t'hi: amb p = 15 % l'error baixa respecte del 5 % de p = 50 %, igual que et va baixar a la Tasca 7 en posar 20 en comptes de 50.
+PREGUNTA 3 — Quina d'aquestes afirmacions sobre els estudis de Segmentació és certa?
+- Només s'utilitzen en mercats B2C (business to consumer).
+- Només tenen sentit quan volem cobrir tot el mercat (estratègia no diferenciada).
+- Necessiten mostres molt grans i qüestionaris bastant extensos.
+- Per segmentar el mercat no podem fer servir variables sociodemogràfiques ni d'hàbits.
+RESPOSTA:
+La c. Segmentar vol dir donar resultats de cada grup per separat, i cada grup necessita prou gent a dins. És la mateixa idea de la pregunta 1 i del teu apartat 7: mostra gran i qüestionari llarg, perquè has de poder creuar moltes variables.
+PREGUNTA 4 — L'oversampling és una tècnica que s'aplica quan…
+RESPOSTA:
+S'augmenta la grandària de la mostra d'un col·lectiu perquè és important per a l'estudi, encara que en l'univers tingui poc pes. Exactament el remei al problema que has vist amb els «Ajuntaments grans»: 6,25 % de la mostra i un error de ± 2,23 %. Si aquest col·lectiu t'interessa, l'has de sobrerepresentar.
+Compte amb una altra que també cau: l'oversampling és un mostreig empíric, no probabilístic, perquè ja no tothom té la mateixa probabilitat de sortir.
+PREGUNTA 5 — En quin moment s'ha de definir l'Univers Objecte d'Estudi (UOE)?
+RESPOSTA:
+Durant la formulació del problema, al principi de tot. Abans de decidir res de la mostra ja has de saber a qui estudies.
+PREGUNTA 6 — A l'hora de definir l'UOE, quina delimitació cal fer?
+RESPOSTA:
+Geogràfica, temporal i substancial. Les tres. Surt amb dues redaccions diferents («a l'hora de definir l'UOE caldrà…» i «quan hem de prendre decisions sobre les característiques d'una mostra és important…») i la resposta és la mateixa. Apre'n-te-les les tres.
+PREGUNTA 7 — Si assignem un número a cada element de l'UOE i n'extraiem uns quants segons una llista de números aleatoris, quin mostreig estem fent?
+RESPOSTA:
+Aleatori simple. És literalment el que has fet a la Tasca 8 amb =ALEATORIO(): un número a l'atzar per fila i et quedes amb els 400 primers. Tothom amb la mateixa probabilitat, 400/2.703 = 14,80 %.
+PREGUNTA 8 — En una investigació comercial, la mostra ha de ser representativa per a…
+RESPOSTA:
+Garantir que es poden extrapolar els resultats a la població. És la conclusió de la teva Tasca 8: 400 de 2.703 i el retrat surt igual, per això pots parlar dels 2.703 havent preguntat a 400.
+PREGUNTA 9 — Quins avantatges té un mostreig aleatori estratificat?
+RESPOSTA:
+Totes són correctes. Quan la pregunta et llista avantatges de l'estratificat, la bona acostuma a ser aquesta.
+PREGUNTA 10 — De desenvolupament (1 punt): què és el concepte «error mostral» i com es pot minimitzar en una investigació de mercats?
+RESPOSTA:
+Tres coses i ja la tens:
+1. Què és. El marge dins del qual es mou el resultat real, perquè no has preguntat a tothom sinó a una mostra. Si dius 20 % amb un error de ± 3,19, el valor real és entre 16,81 % i 23,19 %.
+2. De què depèn. De la mida de la mostra (n), del nivell de confiança (K) i de la proporció p; i només marginalment de la mida de l'univers N — és la lliçó del Barça i l'Eibar.
+3. Com es minimitza. Augmentant la mostra, que és l'única palanca de debò (i va a l'arrel quadrada: per reduir l'error a la meitat necessites quatre vegades més enquestes). També baixant el nivell de confiança, però llavors estàs menys segur. I si el que vols és afinar un col·lectiu concret, sobrerepresentant-lo (oversampling).
