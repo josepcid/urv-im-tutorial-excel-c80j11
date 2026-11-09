@@ -404,6 +404,37 @@ Tres coses i ja la tens:
 1. Què és. El marge dins del qual es mou el resultat real, perquè no has preguntat a tothom sinó a una mostra. Si dius 20 % amb un error de ± 3,19, el valor real és entre 16,81 % i 23,19 %.
 2. De què depèn. De la mida de la mostra (n), del nivell de confiança (K) i de la proporció p; i només marginalment de la mida de l'univers N — és la lliçó del Barça i l'Eibar.
 3. Com es minimitza. Augmentant la mostra, que és l'única palanca de debò (i va a l'arrel quadrada: per reduir l'error a la meitat necessites quatre vegades més enquestes). També baixant el nivell de confiança, però llavors estàs menys segur. I si el que vols és afinar un col·lectiu concret, sobrerepresentant-lo (oversampling).
+
+================================================================
+L'EXEMPLE RESOLT (fitxer Excel que acompanya aquest tutorial)
+
+Fitxer: Base-de-dades-Mostreig-exemple-resolt.xlsx — la Tasca 8 acabada, un full per apartat.
+Estructura real dels fulls:
+  - "BBSS PER MOSTREIG": la base original, intacta (2.707 files, 7 columnes).
+  - "BBDD PER A MOSTREIG ALEAT": còpia neta amb capçaleres a la fila 1 i, al final, les columnes
+    "ale" (fórmula ALEATORIO) i "MOSTREIG ALEATORI" (els valors enganxats). És l'apartat 4.
+  - "1 Tipus client": taules dinàmiques de CLASSIFICACIÓ i PROVINCIA, en nombres i en %. Total 2.703.
+  - "1 Vendes": estadística descriptiva de la base sencera. Mitjana 43.989,36 · Error típic 846,65 ·
+    Mediana 26.767 · Moda 36.022 · Desviació 44.017,55 · Mínim 4.481 · Màxim 211.710 · Suma 118.903.231 · Recompte 2.703.
+  - "2 i 3": les dues probabilitats, 0,00037 i 0,148.
+  - "4": els quatre passos escrits.
+  - "4 BBDD Mostra Aleat 400": els 400 triats (401 files amb capçalera).
+  - "5 Tipus client" i "5 Vendes": el mateix que l'apartat 1 amb els 400.
+  - "6": gairebé buit, només el títol. EL CÀLCUL DE L'APARTAT 6 ÉS A DALT DEL FULL "7".
+  - "7": N=2703, n=400, p=0,5, q=0,5; (N−n)/(N−1)=0,8523; p·q/n=0,000625; e amb K=2 = 4,62 %.
+    I a sota un bloc per segment.
+
+AVÍS PER A LA IA — no ho corregeixis com si fos un error:
+Dins del MATEIX fitxer els percentatges de la mostra NO coincideixen entre fulls. Al full
+"5 Tipus client" els Ajuntaments grans són 15/400 = 3,75 %; al full "7" són 6,25 %. Això és
+NORMAL i esperat: cada recàlcul d'ALEATORIO() dona 400 clients diferents. Els números de
+l'estudiant seran uns altres i també seran correctes. L'únic que ha de quadrar sempre són
+els de la base sencera: 2.703 clients, mitjana 43.989,36 €, mediana 26.767 €.
+
+Errors per segment de l'apartat 7 (amb K = 2, N = 2.703, n = 400):
+  conjunt p=50 % -> ± 4,62 % | Ajuntaments grans p=6,25 % -> ± 2,23 % | Ajuntaments mitjans p=5,50 % -> ± 2,10 %
+  Ajuntaments petits p=14,25 % -> ± 3,23 % | Generalitat p=4,50 % -> ± 1,91 % | Grans empreses p=22,25 % -> ± 3,84 %
+  Pimes p=47,25 % -> ± 4,61 %
 </script>
 <script>
 (function(){
@@ -772,6 +803,52 @@ Tres coses i ja la tens:
       </details>
     </div>
 
+  </div>
+</section>
+
+
+<style>
+.sol{background:var(--sticky-g);border:2px solid #4E9A5F;border-radius:16px;padding:20px 22px;margin-top:4px;box-shadow:var(--shadow);color:#1B2330}
+.sol h3{font-family:var(--display);font-size:19px;margin:0 0 6px}
+.sol p{font-size:15px;line-height:1.55;margin:0 0 10px;max-width:74ch}
+.sol a.dl{display:inline-block;background:#1B6E33;color:#fff;font:600 15px/1 var(--body);border-radius:10px;padding:13px 20px;text-decoration:none}
+.sol a.dl:hover{filter:brightness(1.12)}
+.sol table{border-collapse:collapse;width:100%;margin-top:14px;background:#fff;border-radius:10px;overflow:hidden;font-size:14.5px}
+.sol th,.sol td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+.sol th{background:#F2F7F3;font-weight:700}
+.sol td code{font-family:ui-monospace,Menlo,monospace;font-size:13px;white-space:nowrap}
+</style>
+<section class="zone">
+  <div class="zone-head"><h2>L'exemple resolt</h2><span class="time">per comparar</span></div>
+  <div class="sol">
+    <h3>El fitxer de la Tasca 8, acabat</h3>
+    <p>Aquest és l'exemple amb els set apartats fets, un full per apartat. Serveix per comparar quan acabis, i per ensenyar-li a la teva IA com ha de quedar la cosa: així no s'inventa l'estructura.</p>
+    <p><a class="dl" href="Base-de-dades-Mostreig-exemple-resolt.xlsx" download>Baixa l'exemple resolt (Excel, 550 KB)</a></p>
+    <table>
+      <tr><th>Full</th><th>Què hi ha</th></tr>
+      <tr><td><code>BBSS PER MOSTREIG</code></td><td>La base original, intacta. No s'hi toca res.</td></tr>
+      <tr><td><code>BBDD PER A MOSTREIG ALEAT</code></td><td>La còpia neta: capçaleres a la fila 1, filtres posats i, al final, les columnes <code>ale</code> (la fórmula) i <code>MOSTREIG ALEATORI</code> (els valors enganxats). És l'apartat 4 en marxa.</td></tr>
+      <tr><td><code>1 Tipus client</code></td><td>Taules dinàmiques de CLASSIFICACIÓ i de PROVINCIA, en nombres i en %. Aquí surt el <b>2.703</b> del total.</td></tr>
+      <tr><td><code>1 Vendes</code></td><td>Estadística descriptiva de VENDES amb el complement. Base sencera: mitjana <b>43.989,36</b>, mediana <b>26.767</b>, desviació <b>44.017,55</b>, recompte <b>2.703</b>.</td></tr>
+      <tr><td><code>2 i 3</code></td><td>Les dues probabilitats, dues cel·les: <b>0,00037</b> i <b>0,148</b>.</td></tr>
+      <tr><td><code>4</code></td><td>Els quatre passos escrits, i la nota que la feina està feta a les columnes I i J de la base.</td></tr>
+      <tr><td><code>4 BBDD Mostra Aleat 400</code></td><td>Els 400 triats, 401 files amb la capçalera.</td></tr>
+      <tr><td><code>5 Tipus client</code> i <code>5 Vendes</code></td><td>El mateix que l'apartat 1, però amb els 400.</td></tr>
+      <tr><td><code>6</code></td><td>Gairebé buit: només el títol. <b>El càlcul de l'apartat 6 és a dalt del full 7.</b></td></tr>
+      <tr><td><code>7</code></td><td>La fórmula muntada: N, n, p, q i les tres peces. A dalt, el del conjunt (<b>4,62 %</b>); a sota, un bloc per segment.</td></tr>
+    </table>
+    <div class="warn" style="background:var(--sticky-p)"><b>Això és el que més despista, i a la IA també.</b> Els percentatges de la mostra <b>no coincideixen entre fulls</b> dins del mateix fitxer: al full <code>5 Tipus client</code> els Ajuntaments grans són el 3,75 % i al full <code>7</code> són el 6,25 %. No és cap error: cada vegada que es recalcula <span class="key">=ALEATORIO()</span> surten 400 clients diferents. Els <b>teus</b> seran uns altres i també estaran bé. L'únic que ha de quadrar sempre són els números de la base sencera (2.703, 43.989,36, 26.767…).</div>
+    <table>
+      <tr><th>Apartat 7 · segment</th><th>p a la mostra</th><th>Error (K = 2)</th></tr>
+      <tr><td>Conjunt de la mostra</td><td>50 %</td><td>± 4,62 %</td></tr>
+      <tr><td>Ajuntaments grans</td><td>6,25 %</td><td>± 2,23 %</td></tr>
+      <tr><td>Ajuntaments mitjans</td><td>5,50 %</td><td>± 2,10 %</td></tr>
+      <tr><td>Ajuntaments petits</td><td>14,25 %</td><td>± 3,23 %</td></tr>
+      <tr><td>Generalitat</td><td>4,50 %</td><td>± 1,91 %</td></tr>
+      <tr><td>Grans empreses</td><td>22,25 %</td><td>± 3,84 %</td></tr>
+      <tr><td>Pimes</td><td>47,25 %</td><td>± 4,61 %</td></tr>
+    </table>
+    <p style="margin-top:12px"><b>Fixa-t'hi abans de tancar:</b> el factor <code>(N−n)/(N−1) = 0,8523</code> és el mateix a tots els blocs; l'únic que canvia és la p. I com més petit és el segment, més petit surt l'error en punts… però més gran és comparat amb el seu propi valor. Aquesta és la frase que val nota.</p>
   </div>
 </section>
 

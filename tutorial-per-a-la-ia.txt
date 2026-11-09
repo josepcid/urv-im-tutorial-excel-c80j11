@@ -242,3 +242,34 @@ Tres coses i ja la tens:
 1. Què és. El marge dins del qual es mou el resultat real, perquè no has preguntat a tothom sinó a una mostra. Si dius 20 % amb un error de ± 3,19, el valor real és entre 16,81 % i 23,19 %.
 2. De què depèn. De la mida de la mostra (n), del nivell de confiança (K) i de la proporció p; i només marginalment de la mida de l'univers N — és la lliçó del Barça i l'Eibar.
 3. Com es minimitza. Augmentant la mostra, que és l'única palanca de debò (i va a l'arrel quadrada: per reduir l'error a la meitat necessites quatre vegades més enquestes). També baixant el nivell de confiança, però llavors estàs menys segur. I si el que vols és afinar un col·lectiu concret, sobrerepresentant-lo (oversampling).
+
+================================================================
+L'EXEMPLE RESOLT (fitxer Excel que acompanya aquest tutorial)
+
+Fitxer: Base-de-dades-Mostreig-exemple-resolt.xlsx — la Tasca 8 acabada, un full per apartat.
+Estructura real dels fulls:
+  - "BBSS PER MOSTREIG": la base original, intacta (2.707 files, 7 columnes).
+  - "BBDD PER A MOSTREIG ALEAT": còpia neta amb capçaleres a la fila 1 i, al final, les columnes
+    "ale" (fórmula ALEATORIO) i "MOSTREIG ALEATORI" (els valors enganxats). És l'apartat 4.
+  - "1 Tipus client": taules dinàmiques de CLASSIFICACIÓ i PROVINCIA, en nombres i en %. Total 2.703.
+  - "1 Vendes": estadística descriptiva de la base sencera. Mitjana 43.989,36 · Error típic 846,65 ·
+    Mediana 26.767 · Moda 36.022 · Desviació 44.017,55 · Mínim 4.481 · Màxim 211.710 · Suma 118.903.231 · Recompte 2.703.
+  - "2 i 3": les dues probabilitats, 0,00037 i 0,148.
+  - "4": els quatre passos escrits.
+  - "4 BBDD Mostra Aleat 400": els 400 triats (401 files amb capçalera).
+  - "5 Tipus client" i "5 Vendes": el mateix que l'apartat 1 amb els 400.
+  - "6": gairebé buit, només el títol. EL CÀLCUL DE L'APARTAT 6 ÉS A DALT DEL FULL "7".
+  - "7": N=2703, n=400, p=0,5, q=0,5; (N−n)/(N−1)=0,8523; p·q/n=0,000625; e amb K=2 = 4,62 %.
+    I a sota un bloc per segment.
+
+AVÍS PER A LA IA — no ho corregeixis com si fos un error:
+Dins del MATEIX fitxer els percentatges de la mostra NO coincideixen entre fulls. Al full
+"5 Tipus client" els Ajuntaments grans són 15/400 = 3,75 %; al full "7" són 6,25 %. Això és
+NORMAL i esperat: cada recàlcul d'ALEATORIO() dona 400 clients diferents. Els números de
+l'estudiant seran uns altres i també seran correctes. L'únic que ha de quadrar sempre són
+els de la base sencera: 2.703 clients, mitjana 43.989,36 €, mediana 26.767 €.
+
+Errors per segment de l'apartat 7 (amb K = 2, N = 2.703, n = 400):
+  conjunt p=50 % -> ± 4,62 % | Ajuntaments grans p=6,25 % -> ± 2,23 % | Ajuntaments mitjans p=5,50 % -> ± 2,10 %
+  Ajuntaments petits p=14,25 % -> ± 3,23 % | Generalitat p=4,50 % -> ± 1,91 % | Grans empreses p=22,25 % -> ± 3,84 %
+  Pimes p=47,25 % -> ± 4,61 %
